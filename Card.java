@@ -1,4 +1,4 @@
-package booling;
+package integration_Project;
 import java.util.Random;
 public class Card {
 private String suite;
