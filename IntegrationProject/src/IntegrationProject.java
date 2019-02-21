@@ -17,15 +17,32 @@ The final keyword means a variable's value cannot be changed anywhere in
 the program
 Casting is converting one data type into another data type */
 public class Integration_Project {
-  final double pi = 3.14;
+
+import java.util.*;
+
+public class Booling {
+
   public static void main(String[] args) {
-    System.out.println("\tHello user, and welcome to my integration project.");    
-    boolean theTruth = true;
-    String thread = "I don't like snakes";
-    int myAge = 17;
-    double myAgeButWithAZero = (double) myAge;
-    System.out.println("The truth is " + theTruth);
-    System.out.println(thread);
-    System.out.println(myAge + " but now it has a zero " + myAgeButWithAZero);
+    final double tau = Math.PI*2;
+      System.out.println("Hello user, and welcome to my integration project.\nTau is superior to pi, and it is equal to : " + tau);    
+      boolean theTruth = true;
+      String thread = "I don't like snakes";
+      int myAge = 17;
+      double myAgeButWithAZero = (double) myAge;
+      System.out.println("The truth is " + theTruth);
+      System.out.println(thread);
+      System.out.println(myAge + " but now it has a zero " + myAgeButWithAZero);
+    Scanner sc= new Scanner(System.in);
+    Card myCard = new Card();
+    myCard.draw();
+    System.out.println("Your card is the " + myCard.getNumber()+ " of " + myCard.getSuite());
+    System.out.println("Enter your grade: ");
+    int grade = sc.nextInt();
+    if ((grade <0 || grade >100)==false){
+      System.out.println("Your number is from 0-100");
+      }
+    else
+      System.out.println("Your number is not in the range.");
+    sc.close();
   }
 }
