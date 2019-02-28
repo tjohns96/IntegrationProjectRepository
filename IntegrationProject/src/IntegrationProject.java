@@ -1,7 +1,7 @@
 package booling;
 
 /*
- * My name is Trevor Johnson This is my Integration Project for COP2006. Java has 8 built in data
+ * My name is Trevor Johnson. This is my Integration Project for COP2006. Java has 8 built in data
  * types: Char: A data type holding a single 16 bit Unicode character Byte: A data type holding
  * integers from -128 to 127, or 2^8 values Short: A data type holding 2^16 possible integer values
  * Int: A data type holding 2^32 possible integer values Long: A data type that holds 2^64 possible
@@ -56,22 +56,34 @@ public class Booling {
             "Your opponent's card is the " + card2.getNumName() + " of " + card2.getSuite());
         int card1Value = card1.getCardNum();
         int card2Value = card2.getCardNum();
-        if (card1Value> card2Value) {
+        if (card1Value > card2Value) {
           System.out.println("You win!!!");
-        }
-        else if (card1Value == card2Value) {
+        } else if (card1Value == card2Value) {
           System.out.println("It was a draw!");
-        }
-          else {
-            System.out.println("You lose");
-          }
+        } else {
+          System.out.println("You lose");
         }
       }
+    }
     System.out.println("Enter your grade: ");
     int grade = sc.nextInt();
+    sc.nextLine();
     String result = (!(grade < 0 || grade > 100)) ? "Your number is from 0-100."
         : "Your number is not in the range.";
     System.out.println(result);
-    sc.close();
+    
+    AnagramChecker checker = new AnagramChecker();
+    System.out.println("This checks if two strings are anagrams! Enter any two words, and you will know if they they"
+        + " are anagrams, regardless of case!");
+    System.out.println("Word 1: ");
+    String a = sc.nextLine();
+    System.out.println("Word 2: ");
+    String b = sc.nextLine();
+    if (checker.isAnagram(a,b)) {
+      System.out.println("Those are anagrams!");
+    }
+    else {
+      System.out.println("Those are not anagrams.");
+    }
   }
 }
