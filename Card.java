@@ -1,12 +1,13 @@
-package integration_Project;
+package IntegrationProject;
 import java.util.Random;
 public class Card {
+private int cardNum;
 private String suite;
-private String number;
+private String numName;
 public void draw() {
   Random cardGen = new Random();
-  int suiteNum = cardGen.nextInt(4);
-  switch(suiteNum) {
+  int suiteVal = cardGen.nextInt(4);
+  switch(suiteVal) {
     case 0:
       suite = "Hearts";
       break;
@@ -22,46 +23,59 @@ public void draw() {
      default:
        System.out.println("oof");
   }
-  int cardNum = cardGen.nextInt(13)+2;
-  switch(cardNum) {
+  int cardVal = cardGen.nextInt(13)+2;
+  switch(cardVal) {
     case 2:
-      number = "2";
+      cardNum = cardVal;
+      numName = "2";
       break;
     case 3:
-      number = "3";
+      cardNum = cardVal;
+      numName = "3";
       break;
     case 4:
-      number = "4";
+      cardNum = cardVal;
+      numName = "4";
       break;
     case 5:
-      number = "5";
+      cardNum = cardVal;
+      numName = "5";
       break;
     case 6:
-      number = "6";
+      cardNum = cardVal;
+      numName = "6";
       break;
     case 7:
-      number = "7";
+      cardNum = cardVal;
+      numName = "7";
       break;
     case 8:
-      number = "8";
+      cardNum = cardVal;
+      numName = "8";
       break;
     case 9:
-      number = "9";
+      cardNum = cardVal;
+      numName = "9";
       break;
     case 10:
-      number = "10";
+      cardNum = cardVal;
+      numName = "10";
       break;
     case 11:
-      number = "Jack";
+      cardNum = cardVal;
+      numName = "Jack";
       break;
     case 12:
-      number = "Queen";
+      cardNum = cardVal;
+      numName = "Queen";
       break;
     case 13:
-      number = "King";
+      cardNum = cardVal;
+      numName = "King";
       break;
     case 14:
-      number = "Ace";
+      cardNum = cardVal;
+      numName = "Ace";
       break;
   }
 }
@@ -69,13 +83,19 @@ public void draw() {
 public void setSuite(String s) {
   suite = s;
 }
-public void setNumber(String n) {
-  number = n;
+public void setNumName(String n) {
+  numName = n;
+}
+public void setCardNum(int n) {
+  cardNum = n;
 }
 public String getSuite(){
   return suite;
 }
-public String getNumber() {
-  return number;
+public String getNumName() {
+  return numName;
+}
+public int getCardNum() {
+  return cardNum;
 }
 }
