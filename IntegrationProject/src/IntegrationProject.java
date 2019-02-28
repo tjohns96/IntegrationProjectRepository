@@ -19,7 +19,7 @@ public class Booling {
 
   public static void main(String[] args) {
     final double tau = Math.PI * 2;
-
+    Scanner sc = new Scanner(System.in);
     System.out.println(
         "Hello user, and welcome to my integration project.\nTau is superior to pi, and it is equal to: "
             + tau);
@@ -30,8 +30,12 @@ public class Booling {
     System.out.println("The truth is " + theTruth);
     System.out.println(thread);
     System.out.println("My age is " + myAge + " but now it has a zero " + myAgeButWithAZero);
+    
+    System.out.println("You have several options in this program.");
+    System.out.println("Enter 1 to play War: ");
+    System.out.println("Enter 2 to check if a grade is from 0-100: ");
+    System.out.println("Enter 3 to check if two words are anagrams: ");
 
-    Scanner sc = new Scanner(System.in);
     Card myCard = new Card();
     myCard.draw();
     System.out.println("Your card is the " + myCard.getNumName() + " of " + myCard.getSuite());
@@ -79,11 +83,12 @@ public class Booling {
     String a = sc.nextLine();
     System.out.println("Word 2: ");
     String b = sc.nextLine();
-    if (checker.isAnagram(a,b)) {
-      System.out.println("Those are anagrams!");
+    if (checker.isAnagram(a, b)) {
+      System.out.println("These words are anagrams.");
     }
-    else {
-      System.out.println("Those are not anagrams.");
+    else { 
+      System.out.println("These words are not anagrams.");
     }
+    sc.close();
   }
-}
+  }
