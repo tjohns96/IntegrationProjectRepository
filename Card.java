@@ -1,4 +1,4 @@
-package IntegrationProject;
+package booling;
 import java.util.Random;
 public class Card {
 private int cardNum;
