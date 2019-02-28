@@ -34,7 +34,7 @@ public class Booling {
     Scanner sc = new Scanner(System.in);
     Card myCard = new Card();
     myCard.draw();
-    System.out.println("Your card is the " + myCard.getNumber() + " of " + myCard.getSuite());
+    System.out.println("Your card is the " + myCard.getNumName() + " of " + myCard.getSuite());
 
     System.out.println("Would you like to play war? Enter y for yes: ");
     String war = sc.nextLine();
@@ -46,50 +46,21 @@ public class Booling {
     if (war.toLowerCase().equals("y")) {
       System.out.println("Please enter the number of rounds you wish to play: ");
       int rounds = sc.nextInt();
-      int cardVal1 = 0;
-      int cardVal2 = 0;
       for (int i = 0; i < rounds; i++) {
         Card card1 = new Card();
         card1.draw();
         Card card2 = new Card();
         card2.draw();
-        switch (card1.getNumber()) {
-          case "Ace":
-            cardVal1 = 14;
-            break;
-          case "King":
-            cardVal1 = 13;
-            break;
-          case "Queen":
-            cardVal1 = 12;
-            break;
-          case "Jack":
-            cardVal1 = 11;
-            break;
-          default:
-            cardVal1 = Integer.valueOf(card1.getNumber());
-        }
-        switch (card2.getNumber()) {
-          case "Ace":
-            cardVal2 = 14;
-            break;
-          case "King":
-            cardVal2 = 13;
-            break;
-          case "Queen":
-            cardVal2 = 12;
-            break;
-          case "Jack":
-            cardVal2 = 11;
-            break;
-          default:
-            cardVal2 = Integer.valueOf(card2.getNumber());
-        }
-        System.out.println("Your card is the " + card1.getNumber() + " of " + card1.getSuite());
+        System.out.println("Your card is the " + card1.getNumName() + " of " + card1.getSuite());
         System.out.println(
-            "Your opponent's card is the " + card2.getNumber() + " of " + card2.getSuite());
-        if (cardVal1 > cardVal2) {
+            "Your opponent's card is the " + card2.getNumName() + " of " + card2.getSuite());
+        int card1Value = card1.getCardNum();
+        int card2Value = card2.getCardNum();
+        if (card1Value> card2Value) {
           System.out.println("You win!!!");
+        }
+        else if (card1Value == card2Value) {
+          System.out.println("It was a draw!");
         }
           else {
             System.out.println("You lose");
