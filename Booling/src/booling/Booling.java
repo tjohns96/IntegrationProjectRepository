@@ -37,9 +37,11 @@ public class Booling {
     incrementer++;
     decrementer--;
     int anotha1 = 1;
-    // I would use this to write an accumulator but I don't need one for what I did in the rest of the program.
-    anotha1+=anotha1;
-    System.out.println("5+(9-7)*3/4%2+6+5+2 = " + (5 + (9 - 7) * 3 / 4 % 2 + incrementer + decrementer+anotha1));
+    // I would use this to write an accumulator but I don't need one for what I did in the rest of
+    // the program.
+    anotha1 += anotha1;
+    System.out.println(
+        "5+(9-7)*3/4%2+6+5+2 = " + (5 + (9 - 7) * 3 / 4 % 2 + incrementer + decrementer + anotha1));
     System.out.println("Enter 2 numbers to see if the first is lexicographically larger.");
     System.out.println("Word 1: ");
     System.out.println("Word 2: ");
@@ -131,3 +133,4 @@ public class Booling {
     sc.close();
   }
 }
+
