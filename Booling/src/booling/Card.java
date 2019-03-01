@@ -7,6 +7,7 @@ public class Card {
   private String suite;
   private String numName;
 
+  // This method randomly creates a card with a suite and a cardNum and numName that match
   public void draw() {
     Random cardGen = new Random();
     int suiteVal = cardGen.nextInt(4);
@@ -83,6 +84,9 @@ public class Card {
     }
   }
 
+  // This is my header for the setSuite class, which I never actually use, but is useful in case I
+  // want to create a specific card in the future. The parameter is in parentheses, and is passed to
+  // the suite field.
   public void setSuite(String s) {
     suite = s;
   }
