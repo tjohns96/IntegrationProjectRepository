@@ -30,3 +30,8 @@ Create and use for loops
 Create and use do/while loops
 Use break in a loop with a comment describing what it does
 Use continue in a loop with a comment describing what it does
+I have a method with arguments and return values in my AnagramChecker class, and then I later identify when I call it. I use random
+in my card class, and math when I create the final variable of tau (2pi)
+I have if/else throughout the program, I use the ternary constructor when I compare the two string lexicographically.
+I use a switch statement in my menu and in my card class. I use compare to at the same time as my ternary operator. I use equals when asking the user if they want to run my program again. I use a relational operator with my ternary operator, I use a condtional operator in my do-while loop. I use a while to control if my program keeps running, I used a do-while to make sure that I didn't generate two identical 
+cards, and I used a for loop in asking the user how many rounds of war they wanted to play. I used all of the math operators at the beginning of the program in one statement. I use break and continue in my anagram checker. 
