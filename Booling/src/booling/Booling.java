@@ -20,29 +20,11 @@ import java.util.*;
 public class Booling {
 
   public static void main(String[] args) {
-
+    Intro intro = new Intro();
+    intro.rollIntro();
     // This stuff is garbage to get requirements out of the way.
-    final double tau = Math.PI * 2;
     Scanner sc = new Scanner(System.in);
-    System.out.println(
-        "Hello user, and welcome to my integration project.\nTau is superior to pi, and it is equal to: "
-            + tau);
-    String thread = "I don't like snakes";
-    int myAge = 17;
-    double myAgeButWithAZero = (double) myAge;
-    System.out.println(thread);
-    System.out.println("My age is " + myAge + " but now it has a zero " + myAgeButWithAZero);
-    int incrementer = 5;
-    int decrementer = 6;
-    incrementer++;
-    decrementer--;
-    int anotha1 = 1;
-    // I would use this to write an accumulator but I don't need one for what I did in the rest of
-    // the program.
-    anotha1 += anotha1;
-    System.out.println(
-        "5+(9-7)*3/4%2+6+5+2 = " + (5 + (9 - 7) * 3 / 4 % 2 + incrementer + decrementer + anotha1));
-    System.out.println("Enter 2 numbers to see if the first is lexicographically larger.");
+    System.out.println("Enter 2 numbers to see if the first is alphabetically first.");
     System.out.println("Word 1: ");
     System.out.println("Word 2: ");
     String word1 = sc.nextLine();
@@ -50,8 +32,8 @@ public class Booling {
     // Here I am lazy, so I use the ternary operator and the compareTo method in one line of code to
     // satisfy two requirements
     // I could not think of a good use for them in my program so I'm just getting it out of the way
-    System.out.println((word1.compareTo(word2)) == 1 ? "The first word is lexicographically higher."
-        : "The first word is not lexicographically higher.");
+    System.out.println((word1.toLowerCase().compareTo(word2.toLowerCase())) == 1 ? "The first word is alphabetically after the second."
+        : "The first word is not alphabetically after the second.");
 
     String again = "y";
     // here I use the equals method because if I used == it would check whether or not the objects
@@ -133,4 +115,3 @@ public class Booling {
     sc.close();
   }
 }
-
