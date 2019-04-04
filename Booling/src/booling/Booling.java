@@ -24,7 +24,7 @@ public class Booling {
     intro.rollIntro();
     // This stuff is garbage to get requirements out of the way.
     Scanner sc = new Scanner(System.in);
-    System.out.println("Enter 2 numbers to see if the first is alphabetically first.");
+    System.out.println("Enter 2 words to see if the first is alphabetically first.");
     System.out.println("Word 1: ");
     System.out.println("Word 2: ");
     String word1 = sc.nextLine();
@@ -32,7 +32,8 @@ public class Booling {
     // Here I am lazy, so I use the ternary operator and the compareTo method in one line of code to
     // satisfy two requirements
     // I could not think of a good use for them in my program so I'm just getting it out of the way
-    System.out.println((word1.toLowerCase().compareTo(word2.toLowerCase())) == 1 ? "The first word is alphabetically after the second."
+    System.out.println((word1.toLowerCase().compareTo(word2.toLowerCase())) == 1
+        ? "The first word is alphabetically after the second."
         : "The first word is not alphabetically after the second.");
 
     String again = "y";
@@ -44,10 +45,19 @@ public class Booling {
       System.out.println("Enter 1 to play War: ");
       System.out.println("Enter 2 to check if a grade is from 0-100: ");
       System.out.println("Enter 3 to check if two words are anagrams: ");
-
-      int option = sc.nextInt();
-      // Clearing the scanner because I'm going from int to string in some options.
-      sc.nextLine();
+      int option = 0;
+      do {
+        try {
+          option = sc.nextInt();
+          if(option != 1 && option != 2 && option != 3) {
+            System.out.println("You need to enter a number 1-3. Try again.");
+          }
+        } catch (InputMismatchException ex) {
+          System.out.println("You need to enter a number 1-3. Try again.");
+          // Clearing the scanner because I'm going from int to string in some options.
+          sc.nextLine();
+        }
+      } while (option != 1 && option != 2 && option != 3);
       switch (option) {
 
         case 1:
@@ -115,3 +125,4 @@ public class Booling {
     sc.close();
   }
 }
+
