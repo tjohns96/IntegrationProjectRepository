@@ -6,8 +6,38 @@ public class Card {
   private int cardNum;
   private String suite;
   private String numName;
-
-  // This method randomly creates a card with a suite and a cardNum and numName that match
+  
+  public Card(){
+    cardNum = 2;
+    suite = "Spades";
+    numName = "2";
+  }
+public Card(String n, String s) {
+    numName = n;
+    suite = s;
+    try{
+      cardNum = Integer.parseInt(n);
+    }
+    catch(NumberFormatException ex) {
+      switch(n) {
+        case "Jack":
+          cardNum = 11;
+          break;
+        case "Queen":
+          cardNum = 12;
+          break;
+        case "King":
+          cardNum = 13;
+          break;
+        case "Ace":
+          cardNum = 14;
+          break;
+        default:
+          cardNum = -999;
+          System.out.println("Your card is scuffed");
+      }
+    }
+  }
   public void draw() {
     Random cardGen = new Random();
     int suiteVal = cardGen.nextInt(4);
@@ -84,9 +114,6 @@ public class Card {
     }
   }
 
-  // This is my header for the setSuite class, which I never actually use, but is useful in case I
-  // want to create a specific card in the future. The parameter is in parentheses, and is passed to
-  // the suite field.
   public void setSuite(String s) {
     suite = s;
   }
