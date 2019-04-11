@@ -20,6 +20,8 @@ import java.util.*;
 public class Booling {
 
   public static void main(String[] args) {
+    Card testCard = new Card("garbage", "Clubs");
+    System.out.println(testCard.getSuite() + " " + testCard.getCardNum());
     Intro intro = new Intro();
     intro.rollIntro();
     // This stuff is garbage to get requirements out of the way.
@@ -49,7 +51,8 @@ public class Booling {
       do {
         try {
           option = sc.nextInt();
-          if(option != 1 && option != 2 && option != 3) {
+          sc.nextLine();
+          if (option != 1 && option != 2 && option != 3) {
             System.out.println("You need to enter a number 1-3. Try again.");
           }
         } catch (InputMismatchException ex) {
@@ -62,41 +65,64 @@ public class Booling {
 
         case 1:
           System.out.println("Please enter the number of rounds you wish to play: ");
-          int rounds = sc.nextInt();
-          sc.nextLine();
-          for (int i = 0; i < rounds; i++) {
-            Card card1 = new Card();
-            Card card2 = new Card();
-            // I was actually surprised I found a use for the do-while loop. This
-            // keeps generating cards until they are different cards
-            do {
-              card1.draw();
-              card2.draw();
-            } while (card1.getSuite().equals(card2.getSuite())
-                && card1.getCardNum() == card2.getCardNum());
-            System.out
-                .println("Your card is the " + card1.getNumName() + " of " + card1.getSuite());
-            System.out.println(
-                "Your opponent's card is the " + card2.getNumName() + " of " + card2.getSuite());
-            int card1Value = card1.getCardNum();
-            int card2Value = card2.getCardNum();
-            if (card1Value > card2Value) {
-              System.out.println("You win!!!");
-            } else if (card1Value == card2Value) {
-              System.out.println("It was a draw!");
-            } else {
-              System.out.println("You lose");
+          boolean goodInput = false;
+          do {
+
+            try {
+
+              int rounds = sc.nextInt();
+              sc.nextLine();
+              for (int i = 0; i < rounds; i++) {
+                Card card1 = new Card();
+                Card card2 = new Card();
+                // I was actually surprised I found a use for the do-while loop. This
+                // keeps generating cards until they are different cards
+                do {
+                  card1.draw();
+                  card2.draw();
+                } while (card1.getSuite().equals(card2.getSuite())
+                    && card1.getCardNum() == card2.getCardNum());
+                System.out
+                    .println("Your card is the " + card1.getNumName() + " of " + card1.getSuite());
+                System.out.println("Your opponent's card is the " + card2.getNumName() + " of "
+                    + card2.getSuite());
+                int card1Value = card1.getCardNum();
+                int card2Value = card2.getCardNum();
+                if (card1Value > card2Value) {
+                  System.out.println("You win!!!");
+                } else if (card1Value == card2Value) {
+                  System.out.println("It was a draw!");
+                } else {
+                  System.out.println("You lose");
+                }
+              }
+              goodInput = true;
+            } catch (InputMismatchException Ex) {
+              System.out.println("Please enter an integer.");
+              sc.nextLine();
             }
-          }
+
+          } while (goodInput == false);
           break;
 
         case 2:
           System.out.println("Enter your grade: ");
-          int grade = sc.nextInt();
-          sc.nextLine();
-          String result = (!(grade < 0 || grade > 100)) ? "Your number is from 0-100."
-              : "Your number is not in the range.";
-          System.out.println(result);
+          boolean goodInput2 = false;
+          do {
+            
+            try {
+
+              double grade = sc.nextDouble();
+              sc.nextLine();
+              String result = (!(grade < 0 || grade > 100)) ? "Your number is from 0-100."
+                  : "Your number is not in the range.";
+              System.out.println(result);
+              goodInput2 = true;
+            } catch (InputMismatchException ex) {
+              System.out.println("Please enter a number.");
+              sc.nextLine();
+            }
+          } while (goodInput2 == false);
           break;
 
         case 3:
@@ -125,4 +151,3 @@ public class Booling {
     sc.close();
   }
 }
-
