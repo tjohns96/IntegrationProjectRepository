@@ -21,9 +21,7 @@ public class Booling {
 
   public static void main(String[] args) {
     Card testCard = new Card("garbage", "Clubs");
-    System.out.println(testCard.getSuite() + " " + testCard.getCardNum());
-    Intro intro = new Intro();
-    intro.rollIntro();
+    Intro.rollIntro();
     // This stuff is garbage to get requirements out of the way.
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter 2 words to see if the first is alphabetically first.");
