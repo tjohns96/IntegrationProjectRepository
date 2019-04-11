@@ -1,7 +1,7 @@
 package booling;
 
 public class Intro {
-  public void rollIntro() {
+  public static void rollIntro() {
     final double tau = Math.PI * 2;
     System.out.println(
         "Hello user, and welcome to my integration project.\nTau is superior to pi, and it is equal to: "
