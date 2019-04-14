@@ -20,7 +20,6 @@ import java.util.*;
 public class Booling {
 
   public static void main(String[] args) {
-    Card testCard = new Card("garbage", "Clubs");
     Intro.rollIntro();
     // This stuff is garbage to get requirements out of the way.
     Scanner sc = new Scanner(System.in);
