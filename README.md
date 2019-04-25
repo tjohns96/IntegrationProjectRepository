@@ -35,3 +35,15 @@ in my card class, and math when I create the final variable of tau (2pi)
 I have if/else throughout the program, I use the ternary constructor when I compare the two string lexicographically.
 I use a switch statement in my menu and in my card class. I use compare to at the same time as my ternary operator. I use equals when asking the user if they want to run my program again. I use a relational operator with my ternary operator, I use a condtional operator in my do-while loop. I use a while to control if my program keeps running, I used a do-while to make sure that I didn't generate two identical 
 cards, and I used a for loop in asking the user how many rounds of war they wanted to play. I used all of the math operators at the beginning of the program in one statement. I use break and continue in my anagram checker. 
+The private fields and all that are in the card class.
+The overloaded method is in the card class.
+I described inheritance in the long comment at the beginning
+I used super and used polymorphism in secretIntro
+I used this in the card class getters and setters
+I found the smallest value in ArrayStuff
+I used the 1 dimensional array in rollIntro and ArrayStuff
+I got the sum of an array in ArrayStuff
+I used the enhanced for loop in ArrayStuff
+I used a multi-dimensional array in booling and ArrayStuff
+I searched for indexes of a two dimensional array in ArrayStuff
+I used an ArrayList in ArrayStuff and secretintro
