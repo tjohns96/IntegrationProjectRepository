@@ -12,18 +12,36 @@ package booling;
  * changed anywhere in the program. Casting is converting one data type into another data type.
  * Operator precedence is the idea that in Java certain operators will occur before others. A whole
  * list of this would require a table, but for example, the modulus operator % will occur before the
- * addition operator +. For example, 3%2+1=2, instead of 0, if + was higher than %.
+ * addition operator +. For example, 3%2+1=2, instead of 0, if + was higher than %. Inheritance is a
+ * feature of object oriented programming. It means that objects can inherit both fields and methods
+ * of other classes. This makes the new class a subclass of the parent class. This has multiple
+ * benefits. It allows you to create a broader framework that you can then pass onto other, more
+ * specific classes. It makes it easier to design programs because you can pass on functionality
+ * really easily. Also, inheritance is how you take advantage of polymorphism.
  */
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.InputMismatchException;
+import java.util.Locale;
+import java.util.Scanner;
+
 
 public class Booling {
-
+  /**
+   * My main driver class. The point is to do some random stuff that is required of me.
+   * 
+   * @author Trevor Johnson
+   * @version 1.0
+   * 
+   */
   public static void main(String[] args) {
-    Intro.rollIntro();
+    System.out.println("Guess the password:");
     // This stuff is garbage to get requirements out of the way.
-    Scanner sc = new Scanner(System.in);
-    System.out.println("Enter 2 words to see if the first is alphabetically first.");
+    Scanner sc = new Scanner(System.in, "UTF-8");
+    String password = sc.nextLine();
+    SecretIntro intro = new SecretIntro();
+    intro.rollIntro(password);
+    System.out.println("Enter 2 words to see if the first is lexicographically larger.");
     System.out.println("Word 1: ");
     System.out.println("Word 2: ");
     String word1 = sc.nextLine();
@@ -31,9 +49,26 @@ public class Booling {
     // Here I am lazy, so I use the ternary operator and the compareTo method in one line of code to
     // satisfy two requirements
     // I could not think of a good use for them in my program so I'm just getting it out of the way
-    System.out.println((word1.toLowerCase().compareTo(word2.toLowerCase())) == 1
-        ? "The first word is alphabetically after the second."
-        : "The first word is not alphabetically after the second.");
+    System.out.println((word1.compareTo(word2)) >= 1 ? "The first word is lexicographically larger."
+        : "The first word is not lexcicographically larger.");
+    int[][] anArray = {{0, 1, 2, 3}, {3, 2, 1, 0}, {3, 5, 6, 1}, {3, 8, 3, 4}};
+    System.out.println(Arrays.deepToString(anArray));
+    System.out.println(
+        "Enter a number you see in this array that you would like to know the coordinates of.");
+    int find = 0;
+    boolean goodInput0 = false;
+    do {
+      try {
+        find = sc.nextInt();
+        sc.nextLine();
+        goodInput0 = true;
+      } catch (InputMismatchException ex) {
+        System.out.println("Please enter a number.");
+        sc.nextLine();
+      }
+    } while (goodInput0 == false);
+    System.out.println("Your results are: " + ArrayStuff.findCoordinates(anArray, find));
+
 
     String again = "y";
     // here I use the equals method because if I used == it would check whether or not the objects
@@ -94,7 +129,7 @@ public class Booling {
                 }
               }
               goodInput = true;
-            } catch (InputMismatchException Ex) {
+            } catch (InputMismatchException ex) {
               System.out.println("Please enter an integer.");
               sc.nextLine();
             }
@@ -106,7 +141,7 @@ public class Booling {
           System.out.println("Enter your grade: ");
           boolean goodInput2 = false;
           do {
-            
+
             try {
 
               double grade = sc.nextDouble();
@@ -123,14 +158,14 @@ public class Booling {
           break;
 
         case 3:
-          AnagramChecker checker = new AnagramChecker();
-          System.out.println(
-              "This checks if two strings are anagrams! Enter any two words, and you will know if they they"
-                  + " are anagrams, regardless of case!");
+          System.out
+              .println("This checks if two strings are anagrams! Enter any two words, and you will "
+                  + "know if they they" + " are anagrams, regardless of case!");
           System.out.println("Word 1: ");
           String a = sc.nextLine();
           System.out.println("Word 2: ");
           String b = sc.nextLine();
+          AnagramChecker checker = new AnagramChecker();
           // Here I call the isAnagram method, and pass string a and b as arguments to the method,
           // to check if they are anagrams of course.
           if (checker.isAnagram(a, b)) {
@@ -139,10 +174,12 @@ public class Booling {
             System.out.println("These words are not anagrams.");
           }
           break;
+        default:
+          System.out.println("You shouldn't be here.");
       }
       System.out.println("Would you like to run the program again? Y for yes: ");
       again = sc.nextLine();
-      again = again.toLowerCase();
+      again = again.toLowerCase(Locale.ENGLISH);
     }
     System.out.println("Goodbye User!");
     sc.close();
